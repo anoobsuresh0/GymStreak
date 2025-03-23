@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "GymStreak",
+  "name": "GymStreak - Gym Attendance Tracker",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,10 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#2e7d32",
+  "background_color": "#f5f5f5",
+  "orientation": "portrait",
+  "description": "Track your gym attendance and manage your fitness journey",
+  "scope": "/",
+  "screenshots": []
 }

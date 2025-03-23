@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# GymStreak
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GymStreak is a Progressive Web App (PWA) designed to help you track your gym attendance and manage your gym membership plan. With GymStreak, you can easily record your gym visits, view your attendance history in a calendar format, analyze your gym attendance patterns, and get notifications about your membership expiration.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Daily Attendance Tracking:** Mark whether you attended the gym each day
+- **Calendar View:** Visual representation of your attendance history with color coding
+- **Analytics Dashboard:** View statistics and charts about your gym attendance
+- **Membership Plan Management:** Set your gym membership details and get expiration reminders
+- **Push Notifications:** Get reminders to log your attendance
+- **Installable on Mobile:** Works as a mobile app through PWA technology
+- **Works Offline:** Access your data even without an internet connection
 
-### `npm start`
+## Installation on Mobile
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### For iPhone/iOS:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Open Safari browser on your iPhone
+2. Go to the GymStreak web app (after deployment)
+3. Tap the Share button (the square with an arrow pointing upward)
+4. Scroll down and tap "Add to Home Screen"
+5. Name the app "GymStreak" and tap "Add"
+6. The app icon will appear on your home screen
 
-### `npm test`
+### For Android:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Open Chrome browser on your Android device
+2. Go to the GymStreak web app (after deployment)
+3. Tap the three-dot menu in the top-right corner
+4. Tap "Add to Home screen" or "Install app"
+5. Tap "Add" in the confirmation dialog
+6. The app icon will appear on your home screen
 
-### `npm run build`
+## Development Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want to run the app locally or make changes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project directory:
+   ```
+   cd gym-tracker
+   ```
 
-### `npm run eject`
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Building for Production
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To create a production build:
 
-## Learn More
+```
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This builds the app for production to the `build` folder. The build is minified and the filenames include hashes for cache management.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
+
+- React
+- TypeScript
+- Material UI
+- Date-fns
+- Chart.js
+- PWA features (service workers, offline support)
+- Local Storage for data persistence
+
+## License
+
+MIT
