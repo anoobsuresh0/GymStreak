@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography, CircularProgress } from '@mui/material';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { keyframes } from '@mui/system';
 
 const pulse = keyframes`
@@ -9,8 +8,8 @@ const pulse = keyframes`
     opacity: 1;
   }
   50% {
-    transform: scale(1.2);
-    opacity: 0.8;
+    transform: scale(1.1);
+    opacity: 0.9;
   }
   100% {
     transform: scale(1);
@@ -31,7 +30,7 @@ const SplashScreen: React.FC = () => {
         position: 'fixed',
         top: 0,
         left: 0,
-        backgroundColor: theme => "#000",
+        backgroundColor: "#000",
         zIndex: 9999,
       }}
     >
@@ -43,20 +42,16 @@ const SplashScreen: React.FC = () => {
           animation: `${pulse} 2s infinite ease-in-out`
         }}
       >
-        <FitnessCenterIcon 
-          sx={{ 
-            fontSize: 100, 
-            color: 'white',
-            mb: 2 
-          }} 
-        />
         <Typography 
-          variant="h4" 
+          variant="h2" 
           component="h1" 
           sx={{ 
             color: 'white',
-            fontWeight: 'bold',
-            mb: 4
+            fontWeight: 800,
+            letterSpacing: '1px',
+            textTransform: 'uppercase',
+            mb: 4,
+            fontFamily: "'Montserrat', sans-serif",
           }}
         >
           Gym Streak
