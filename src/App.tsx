@@ -14,6 +14,7 @@ import Dashboard from './pages/Dashboard';
 import Calendar from './pages/Calendar';
 import Analytics from './pages/Analytics';
 import Settings from './pages/Settings';
+import SplashScreen from './components/SplashScreen';
 import { useNotification } from './hooks/useNotification';
 
 const theme = createTheme({
@@ -43,6 +44,7 @@ const theme = createTheme({
 
 function App() {
   const [page, setPage] = useState('dashboard');
+  const [showSplash, setShowSplash] = useState(true);
   
   // Initialize notifications
   useNotification();
@@ -61,6 +63,15 @@ function App() {
         );
       });
     }
+  }, []);
+
+  // Hide splash screen after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   // Render the current page based on navigation state
@@ -82,42 +93,46 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ pb: 7, minHeight: '100vh' }}>
-        {renderPage()}
-        <Paper
-          sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
-          elevation={3}
-        >
-          <BottomNavigation
-            showLabels
-            value={page}
-            onChange={(_, newValue) => {
-              setPage(newValue);
-            }}
+      {showSplash ? (
+        <SplashScreen />
+      ) : (
+        <Box sx={{ pb: 7, minHeight: '100vh' }}>
+          {renderPage()}
+          <Paper
+            sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
+            elevation={3}
           >
-            <BottomNavigationAction 
-              label="Today" 
-              value="dashboard" 
-              icon={<FitnessCenterIcon />} 
-            />
-            <BottomNavigationAction 
-              label="Calendar" 
-              value="calendar" 
-              icon={<CalendarMonthIcon />} 
-            />
-            <BottomNavigationAction 
-              label="Analytics" 
-              value="analytics" 
-              icon={<BarChartIcon />} 
-            />
-            <BottomNavigationAction 
-              label="Settings" 
-              value="settings" 
-              icon={<SettingsIcon />} 
-            />
-          </BottomNavigation>
-        </Paper>
-      </Box>
+            <BottomNavigation
+              showLabels
+              value={page}
+              onChange={(_, newValue) => {
+                setPage(newValue);
+              }}
+            >
+              <BottomNavigationAction 
+                label="Today" 
+                value="dashboard" 
+                icon={<FitnessCenterIcon />} 
+              />
+              <BottomNavigationAction 
+                label="Calendar" 
+                value="calendar" 
+                icon={<CalendarMonthIcon />} 
+              />
+              <BottomNavigationAction 
+                label="Analytics" 
+                value="analytics" 
+                icon={<BarChartIcon />} 
+              />
+              <BottomNavigationAction 
+                label="Settings" 
+                value="settings" 
+                icon={<SettingsIcon />} 
+              />
+            </BottomNavigation>
+          </Paper>
+        </Box>
+      )}
     </ThemeProvider>
   );
 }
